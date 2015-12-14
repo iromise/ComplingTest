@@ -1,0 +1,54 @@
+const
+  a=5,b=6,c='x',d='y';
+
+var
+  i,j:integer;
+ 
+     m,n:char;
+ 
+     q:array[10]of integer;
+  
+     p:array[20]of integer;
+
+begin
+
+	i:=a;
+	write(i);
+	i:=a+b;
+	
+	write(" ");
+	write(i);
+	i:=b*c-d;
+
+	write(" ");
+	write(i);
+	j:=i*(i-a);
+	write(" ");
+	write(j);
+
+	i:=5;
+	p[i]:=5;
+	q[i-5]:=97;
+	j:=p[i]*q[i-5];
+	write(" ");
+	write(j);
+
+	m:=n;
+
+	m:=i;
+
+	m:=c;
+	write(" ");
+	write(m);
+
+	n:=m*d+a;
+
+	n:=p[5];
+	write(" ");
+	write(n);
+
+	q[2]:=1;
+	q[1]:=i*q[2];
+	write(" ");
+	write(q[1]);
+end.

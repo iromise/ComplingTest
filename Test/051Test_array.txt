@@ -1,0 +1,11 @@
+const a=45,b=27;
+var x,y,g,m :integer;q:array[5] of integer;
+
+
+begin
+
+	q[1]:=a/b;
+
+	write("q[1]=",q[1])
+
+end.

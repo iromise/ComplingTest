@@ -1,0 +1,10 @@
+var i;
+begin
+	read(i);
+	case i of
+		1:	i:=i+1;
+		2:	i:=i+2;
+		3:	i:=i+3;
+		100:	i:=i-i;
+	end	
+end.

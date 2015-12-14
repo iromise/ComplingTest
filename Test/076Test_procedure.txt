@@ -1,0 +1,24 @@
+var a:integer;b:char;
+procedure p1(q:integer);
+	const two = 2, a = 'a',d = 'd',c = 'c';
+	procedure p2(x:char);
+		var y:integer;
+		begin
+			y := x + a;
+			write("  ");
+			write(y);
+			x := x - c;
+			write("  ",x);
+		end;
+	begin
+		write(a);
+		b := d + a;
+		p2(b);
+		write("  ",q+two);
+	end;
+begin
+	p1(4);
+	a := b + 10;
+	write("  ",a);
+end.
+	

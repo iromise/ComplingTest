@@ -1,0 +1,15 @@
+var i,j:integer;
+function gcd(i,j:integer):integer;
+	begin
+		if i=j then 
+			gcd:=i;
+		if i>j then 
+			gcd:=gcd(i-j,j);
+		if i<j then 
+			gcd:=gcd(i,j-i);
+	end;
+begin 
+	read(i,j); 
+	write("Now we want to get the greatest common divisor of the two input number: ");
+	write(gcd(i,j)) 
+end.

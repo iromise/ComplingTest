@@ -1,0 +1,9 @@
+var a:integer;
+    ch:char;
+begin
+	read(a);
+	write(a);
+	write("this is the ch: ");
+	read(ch);
+	write(ch);
+end.

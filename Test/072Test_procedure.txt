@@ -1,0 +1,34 @@
+var num :array[100] of integer;
+	n,i:integer;
+procedure swap( var a, b:integer);
+var tmp:integer;
+begin
+	tmp := a;
+	a := b;
+	b := tmp
+end ;
+procedure perm( k, m :integer);
+var i :integer;
+begin
+	if k=m-1 then 
+		begin 
+			for i:= 0 to m-1 do
+				write(" ",num[i]);
+			write("|");
+		end
+	else 
+		begin
+			for i:=k to m-1 do 
+				begin
+					swap(num[k],num[i]);
+					perm(k+1,m);
+					swap(num[k],num[i])
+				end
+		end
+end;
+begin
+for i:=0 to 99 do
+	num[i]:=i+1;
+perm(0,3)
+end
+. 

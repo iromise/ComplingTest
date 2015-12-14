@@ -1,0 +1,22 @@
+var a, b , c ,d , e :integer;
+begin
+	a:=2 + (2-3);
+	b:=3 + 2 * 3 * 0 + (2-3);
+	c:=3 + (2-3) * (2*3);
+	d:=-2 + 2 * 3 ;
+	if a>b then begin
+		c:=(a+b)*(a-b)/(a+b)-(a-b); 
+		d:=(a-b)+(a-b)*(a+b); 
+		e:= c -d; 
+	end else begin
+		c:=(a+b)*(a-b)/(a+b)-(a-b); 
+		d:=(a-b)+(a-b)*(a+b);	
+		e:= c + d;
+	end;
+	write(" a= ",a);
+	write(" b= ",b);
+	write(" c= ",c);
+	write(" d= ",d);
+	write(" e= ",e);
+
+end.	

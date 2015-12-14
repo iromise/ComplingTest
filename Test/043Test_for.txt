@@ -1,0 +1,29 @@
+var i, j, temp : integer; s : array[5] of integer;
+procedure swap(var p,q : integer);
+	var temp : integer;
+	begin
+		temp := p;
+		p := q;
+		q := temp
+	end;
+begin
+	write("Please input 5 integers:");
+	for i := 4 downto 0 do
+		begin
+			read(temp);
+			s[i] := temp
+		end;
+	for i := 0 to 4 do
+		begin
+			temp := i;
+			for j := i+1 to 4 do
+				begin
+					if s[j] < s[temp] then
+						temp := j;
+				end;
+			swap(s[i],s[temp]);
+		end;
+	write("Sorted as:");
+	for i := 0 to 4 do
+		write(" ",s[i])
+end.

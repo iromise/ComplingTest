@@ -1,0 +1,23 @@
+var a:array [10] of integer;
+b:array [10] of integer;
+
+c:array [10] of integer;
+d:array [10] of integer;
+
+e:array [10] of integer;
+index:integer;
+
+begin 
+	for index:=0 to 9 do 
+		c[index]:=index;
+	for index:=0 to 9 do 
+		b[c[index]]:=index;
+	for index:=0 to 9 do 
+		a[b[c[index]]]:=index;
+	for index:=0 to 9 do 
+		d[a[b[c[index]]]]:=index;
+	for index:=0 to 9 do 
+		e[d[a[b[c[index]]]]]:=index;
+	for index:=0 to 9  do 
+		write(e[index])
+end.

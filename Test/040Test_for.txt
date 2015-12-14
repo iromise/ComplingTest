@@ -1,0 +1,21 @@
+const MAX=10,MIN=-10,A='A';
+var i , n :integer;
+  arr: array[20] of char;
+procedure proc;
+	begin
+	end;
+function func:integer;
+	begin
+	end;
+begin
+	write("Enter n: ");
+	read(n);
+	if n<=0 then
+		for i:=n to MAX do
+			write(" ",i)
+	else
+		begin
+		     for i:=n downto MIN do
+			write(" ",i)	
+		end
+end.

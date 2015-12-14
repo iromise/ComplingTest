@@ -1,0 +1,18 @@
+var n : integer;
+function fb(i : integer) : integer;
+	begin
+		if i = 1 then
+			fb := 1
+		else 
+			if i = 2 then
+				fb := 1
+			else
+				fb := fb(i-1) + fb(i-2)
+	end;
+begin
+	write("Please input an integers:");
+	read(n);
+	write("The ");
+	write(n);
+	write(" Fibonacci number is ", fb(n))
+end.

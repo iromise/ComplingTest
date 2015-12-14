@@ -1,0 +1,6 @@
+const two = 2;
+var top, bottom, height : integer;
+begin
+	read(top, bottom, height);
+	write("The area of the trapezoid: ", (top + bottom) * height / two)
+end.

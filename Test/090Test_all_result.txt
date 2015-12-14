@@ -1,0 +1,3 @@
+{result: 2}
+{result: 360}
+{result: 22}

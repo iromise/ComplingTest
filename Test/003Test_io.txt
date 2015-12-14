@@ -1,0 +1,19 @@
+var i:integer;
+	c:char;
+begin
+	i:=60;
+	c:=i;
+	write(" ",i);
+	write(" ",c);
+
+	write(" ",c+i);
+	write(" ",i+i);
+	write(" ",i+c);
+	
+	write(" ",c+c);
+	write(" ",c/c+c/c+c);
+	c:=c+c;
+	write(" ",c);
+
+end
+.

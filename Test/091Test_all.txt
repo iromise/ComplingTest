@@ -1,0 +1,44 @@
+procedure heh;
+var vn, out, i: integer;
+	A:array[10] of integer;
+procedure outter(y:integer);
+	procedure writeoo;
+	begin
+		write("  ")
+	end;
+	procedure foo(y:integer);
+		procedure pcd(x:integer);
+			var t: integer;
+			function sum(var x:integer):integer;
+				var t: integer;
+			begin
+				t := x-1;
+				if x = 1 then 
+					sum := 1
+				else
+					sum := sum(t)+x;
+			end;
+		begin
+			t := x;
+			out := sum(t)
+		end;
+	begin
+		pcd(y);
+		writeoo;
+	end;
+begin
+	foo(y)
+end;
+begin
+	vn := 100;
+	outter(vn);	
+	write(out);
+	outter(99);
+	write(out);
+	outter(98);
+	write(out);
+end;
+begin 
+	heh
+end.
+

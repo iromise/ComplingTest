@@ -1,0 +1,16 @@
+var num :array[100] of integer;
+	n,i:integer;
+procedure swap( var a, b:integer);
+var tmp:integer;
+begin
+	tmp := a;
+	a := b;
+	b := tmp
+end;
+begin
+	read(n);
+	read(i);
+	swap(n,i);
+	write("the result is : ",n);
+	write(" ",i);
+end. 

@@ -1,0 +1,28 @@
+const MAX=200;
+var i :integer;
+  arr: array[20] of char;
+procedure proc;
+var a:integer;
+	procedure proc2;
+	var b:integer;
+	begin
+		a:=MAX;
+		b:=MAX-10;
+		i:=a-b;
+		write(" a= ",a);
+		write(" b= ",b);
+	end;
+begin
+	proc2;
+end;
+function func(t:integer):integer;
+	begin
+		t := 2*t; 
+		func := t;
+	end;
+begin
+	i:= func(10);
+	write(" i= ",i);
+	proc;
+	write(" i= ",i)
+end.

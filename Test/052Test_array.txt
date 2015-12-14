@@ -1,0 +1,22 @@
+const
+  a=5,b=6,c='x',d='y';
+
+var
+  i,j:integer;
+ 
+     m,n:char;
+ 
+     q:array[10]of integer;
+  
+     p:array[20]of integer;
+
+begin
+
+	i:=1;
+	p[i]:=3;
+	q[i]:=i;
+	write(q[i]);
+	write("  ");
+	q[i]:=p[i];
+	write(q[i]);
+end.
