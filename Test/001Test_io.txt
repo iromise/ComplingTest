@@ -1,8 +1,6 @@
-var
-i:integer;
+const two = 2;
+var top, bottom, height : integer;
 begin
-	read(i);
-   write(" dfasdfa ",i);
-   write(" sdasds ");
-   write(i+i)
+	read(top, bottom, height);
+	write("The area of the trapezoid: ", (top + bottom) * height / two)
 end.

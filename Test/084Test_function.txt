@@ -2,7 +2,7 @@ const two = 2, four = 4, h = 'h', e = 'e', l = 'l', o = 'o';
 var x:integer;
     c:char;
 function f(p:integer):integer;
-	procedure print();
+	procedure print;
 	begin
 		write(h);
 		write(e);
@@ -14,7 +14,7 @@ function f(p:integer):integer;
 		write("  ");
 	end;
 	begin
-		print();
+		print;
 		f := p * 2;
 	end;
 begin

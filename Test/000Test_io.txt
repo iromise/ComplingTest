@@ -6,4 +6,5 @@ begin
 	write("this is the ch: ");
 	read(ch);
 	write(ch);
+	write("thie is the num we read :",a);
 end.

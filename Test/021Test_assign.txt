@@ -1,0 +1,7 @@
+const a=12345678;
+var
+	c:char;
+begin
+	c:=a;
+	write(c);
+end.

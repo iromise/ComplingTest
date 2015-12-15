@@ -10,10 +10,8 @@ begin
 	write(" ",b);
 	write(" ",c);
 	write(" ",d);
-
 	a:= ((a+b)*c+(d+a)/b)/d;
 	write(" ", a);
-	{result 6}
 	arr[0]:=1;
 	arr[1]:=1;
 	for i:=2 to 19 do

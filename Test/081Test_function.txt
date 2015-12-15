@@ -1,5 +1,5 @@
 procedure pri;
-	function f(n:integer):integer;
+	function f(n:integer):char;
 		begin 
 			if n<3 then 
 				f:=n 
