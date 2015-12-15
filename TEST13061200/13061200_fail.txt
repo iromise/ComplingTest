@@ -1,0 +1,159 @@
+ ifOk = 'y',
+	  num = -150;
+var ,b:integer;
+	arr:array [11] of integer;
+	arr2:array [10] of char;
+	c:integer;
+	syms:char;
+	c:char;
+	
+procedure emptyProc; begin end;
+
+procedure testAssign(x,y,z:integer);
+	var a,:integer;
+		myarray:array[10] of integer;
+	function f:integer;begin f:=b end;
+	begin
+		write(" testAssign begin:");
+		a:=x;
+		b:=y;
+		a:=e;
+		a:='a';
+		syms:=15;
+		myarray[10]:=6;
+		myarray[-1]:=syms;
+		myarray:=7;
+		myarray[2]:= z;
+		arr2[3]:= 0;
+		write("var a = ",x);
+		write(" function f = ",y);
+		write(" array[2] = ",z);
+		write(" test end                 ")
+	end;
+
+procedure testCondition(x,y:integer);
+	begin
+		write(" testCondition begin:");
+		if x=y then write(" x=y:true") else write(" x=y:false");
+		if x>y then write(" x>y:true") else write(" x>y:false");
+		if x<y then write(" x<y:true") else write(" x<y:false");
+		if x>=y then write(" x>=y:true") else write(" x>=y:false");
+		if x<=y then write(" x<=y:true") else write(" x<=y:false");
+		if x<>y then write(" x<>y:true") else write(" x<>y:false");
+		write(" test end                 ")
+	end;
+
+procedure testCase(a,b:integer);
+	function calculator(x,y:integer;op:char):integer;
+		begin
+			case op of
+				'A': calculator:=x+y;
+				'S': calculator:=x-y; 
+				'M': calculator:=x*y;
+				'D': calculator:=x/y
+			end
+		end;
+	begin
+		write(" testCase begin:");
+		write(" a=",a);
+		write(" b=",b);
+		write(" a+b=",calculator(a,b,'A'));
+		write(" a-b=",calculator(a,b,'S'));
+		write(" a*b=",calculator(a,b,'M'));
+		write(" a/b=",calculator(a,b,'D'));
+		write(" test end                 ")
+	end;
+	
+procedure testFor(x:integer);
+	var i:integer;
+	begin
+		write(" testFor begin:");
+		for i:=0 to x do write(i);
+		for i:=x downto 0 do write(i);
+		write(" test end                 ")
+	end;
+	
+procedure testExpression;
+	var a:integer;
+		res:integer;
+		Nums:array[10] of integer;
+	function add (x,y:integer):integer;
+		begin
+			add := x+y
+		end;
+	begin 
+		a:=5;
+		Nums[1]:=3;
+		write(" testExpression begin:");
+		res := - 3 + (2 * (7 - 2) + 1) / a + Nums[1*1] + add(3,4);
+		write(" - 3 + (2 * (7 - 2) + 1) / 5 + 3 + add(3,4) = ",res);
+		write(" test end                 ")
+	end;
+
+procedure swap (var x,y:integer);
+	var tp,counts:integer;
+	procedure swap2 (var x,y:integer);
+	    var tp2:integer;
+		begin
+			tp2 := x;
+			x := y;
+			y := tp2;
+			counts := counts + 1;
+			write(" after swap ",counts);
+			write(" times, arr[1]=",x);
+			write(" b=",y)
+		end;
+	begin
+		counts := 0;
+		write(" before swap, arr[1]=",x);
+		write(" b=",y);
+		swap2 (x,y);
+		swap2 (arr[1],b);
+	end;
+
+function getMax (x,y:integer):integer;
+	begin
+		if x>y 
+			then getMax:= x
+		else getMax:=y
+	end;
+
+function Fibbonacci (num:integer): integer;
+	begin
+		if num=0
+			then Fibbonacci:=1
+		else
+			if num=1
+				then Fibbonacci:=1
+			else
+				Fibbonacci := Fibbonacci(num-1) + Fibbonacci(num-2)
+	end;
+
+
+	
+begin
+	write("testCount:");
+	write(" count ifOk=",ifOk);
+	write(" num=",num);
+	write(" test end                      ");
+	testAssign(1,2,3);
+	testCondition(2,3);
+	testCase(3,4);
+	testFor(5);
+	testExpression;
+	emptyProc;
+	write(" testFunc:getMax(a,b)");
+	a := 3;
+	b := 4;
+	write(" getMax(",a);
+	write(",",b);
+	write(")=",getMax(a,b));
+	write(" testFunc:swap(arr[1],b)");
+	arr[1] := 5;
+	b := 6;
+	swap(arr[1],b);
+	write(" testFunc:Fibbonacci(n)");
+	a := 7;
+	write(" Fibbonacci(",a);
+	write(")=",Fibbonacci(a))
+end.
