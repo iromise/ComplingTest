@@ -1,4 +1,4 @@
-var i,j:integer;
+var i,j,k:integer;
 function gcd(i,j:integer):integer;
 	begin
 		if i=j then 
@@ -11,5 +11,9 @@ function gcd(i,j:integer):integer;
 begin 
 	read(i,j); 
 	write("Now we want to get the greatest common divisor of the two input number: ");
-	write(gcd(i,j)) 
+	write(gcd(i,j));
+	write("Now please input three num,we get their GCD:");
+	read(i,j,k);
+	write(gcd(i,gcd(j,k)));
+	write(" ",gcd(gcd(i,j),k))
 end.

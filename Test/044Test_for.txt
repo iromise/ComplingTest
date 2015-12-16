@@ -1,6 +1,12 @@
-var i,j,k:integer;
+const a='A',
+z = 'z';
+var i :char ;
 begin
-	if 1=1 then
-		for i:=1 to 10 do
-	else
-end.
+	for i:=a to z do
+		begin
+			write("ascii code:",i+0);
+			write(",");
+			write("symbol",i);
+			write("         ") ; 
+		end;
+end .

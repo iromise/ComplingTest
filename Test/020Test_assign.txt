@@ -10,6 +10,7 @@ var
   
      p:array[20]of integer;
 
+     r:array[20] of char;
 begin
 
 	i:=a;
@@ -26,17 +27,17 @@ begin
 	write(" ");
 	write(j);
 
+	i:=12345678;
+	m:=i;
+	write(" ",m);
+	r[9]:=i;
+	write(" ",r[9]);
 	i:=5;
 	p[i]:=5;
 	q[i-5]:=97;
 	j:=p[i]*q[i-5];
 	write(" ");
 	write(j);
-
-	m:=n;
-
-	m:=i;
-
 	m:=c;
 	write(" ");
 	write(m);

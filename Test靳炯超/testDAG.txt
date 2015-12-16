@@ -1,0 +1,18 @@
+var a,b,c,d,e :integer ; 
+begin
+write("please input a,b");
+read(a,b) ;
+c:=(a+b)-(a+b)+(a+b) ; 
+d:=c*(a+b)+c/(a+b)+c*(a+b);
+if a>3 then
+begin
+e:= (a+b)*(a+b)
+end
+else
+e:= (a-b)*(a-b);
+write (a);
+write ("  ",b);
+write ("  ",c);
+write ("  ",d);
+write ("  ",e);
+end.
