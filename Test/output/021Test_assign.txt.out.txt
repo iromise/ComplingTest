@@ -1,0 +1,13 @@
+const cc = 'c' ; 
+var 
+a , b : integer ; 
+array1 : array [ 15 ] of integer ; 
+c : char ; 
+begin 
+a := 5 ; 
+array1 [ 0 ] := a ; 
+b := array1 [ 0 ] ; 
+c := cc ; 
+write ( "english" , b ) ; 
+write ( c ) 
+end . 

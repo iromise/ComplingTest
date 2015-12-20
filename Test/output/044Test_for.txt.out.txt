@@ -1,0 +1,12 @@
+const a = 'a' , 
+z = 'z' ; 
+var i : char ; 
+begin 
+for i := a to z by 1 do 
+begin 
+write ( "ascii code:" , i + 0 ) ; 
+write ( "," ) ; 
+write ( "symbol" , i ) ; 
+write ( "         " ) ; 
+end ; 
+end . 

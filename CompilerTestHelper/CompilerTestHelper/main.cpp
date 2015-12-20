@@ -19,21 +19,21 @@ int main() {
         << "建议将编译器输出调至Console，并选择模式2。" << endl
         << "祝大家测试愉悦~(～￣▽￣)→))*￣▽￣*)o" << endl << endl
         << "请输入测试程序目录（末尾不带\'\\\'） : " << endl;
-    //cin >> dir;
-    //cout << "请输入编译器exe地址（含完整路径,若不需要输出编译结果请输入字母n） : " << endl;
-    //cin >> exe_dir;
-    //cout << "支持while吗？（1：支持，0：不支持）" << endl;
-    //cin >> hasWhile;
-    //cout << "支持case吗？（1：支持，0：不支持）" << endl;
-    //cin >> hasWhile;
-    //cout << "支持repeat吗？（1：支持，0：不支持）" << endl;
-    //cin >> hasWhile;
-    //cout << "For循环支持自定义步长吗？（1：支持，0：不支持）" << endl;
-    //cin >> hasWhile;
-    //cout << "过程/函数无参时需要括号吗？（1：需要，0：不需要）" << endl;
-    //cin >> hasWhile;
-    dir = "D:\\VisualStudio\\ComplingTest\\Test";
-    exe_dir = "D:\\VisualStudio\\BUAACourse-Compiler-pl0\\Debug\\Compiler-pl0.exe";
+    cin >> dir;
+    cout << "请输入编译器exe地址（含完整路径,若不需要输出编译结果请输入字母n） : " << endl;
+    cin >> exe_dir;
+    cout << "支持while吗？（1：支持，0：不支持）" << endl;
+    cin >> hasWhile;
+    cout << "支持case吗？（1：支持，0：不支持）" << endl;
+    cin >> hasWhile;
+    cout << "支持repeat吗？（1：支持，0：不支持）" << endl;
+    cin >> hasWhile;
+    cout << "For循环支持自定义步长吗？（1：支持，0：不支持）" << endl;
+    cin >> hasWhile;
+    cout << "过程/函数无参时需要括号吗？（1：需要，0：不需要）" << endl;
+    cin >> hasWhile;
+    //dir = "D:\\VisualStudio\\ComplingTest\\Test";
+    //exe_dir = "D:\\VisualStudio\\BUAACourse-Compiler-pl0\\Debug\\Compiler-pl0.exe";
     int mode;
     if (strcmp(exe_dir.c_str(), "n")) {
         cout << "请选择编译器的输出方式 : " << endl
