@@ -1,0 +1,3 @@
+add       $fp, $sp, $0
+j         semiProgLabel1
+semiProgLabel1:
