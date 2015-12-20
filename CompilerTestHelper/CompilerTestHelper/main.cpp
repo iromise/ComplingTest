@@ -8,6 +8,8 @@ int main() {
     int hasWhile = 1, hasCase = 0, hasRepeat = 0, hasStep = 1, hasParenthesis = 1;
     bool errorFlag;
     string dir, exe_dir;
+    char func[100][MaxRes + 1];
+    int topIndex = 0, index;
     cout << "瞎写的测试用工具，毫无鲁棒性，不要瞎搞=。=" << endl
         << "支持对不支持的文法进行删除（扔掉测试程序）" << endl
         << "支持对for循环步长和downto的转换" << endl
@@ -17,19 +19,21 @@ int main() {
         << "建议将编译器输出调至Console，并选择模式2。" << endl
         << "祝大家测试愉悦~(～￣▽￣)→))*￣▽￣*)o" << endl << endl
         << "请输入测试程序目录（末尾不带\'\\\'） : " << endl;
-    cin >> dir;
-    cout << "请输入编译器exe地址（含完整路径,若不需要输出编译结果请输入字母n） : " << endl;
-    cin >> exe_dir;
-    cout << "支持while吗？（1：支持，0：不支持）" << endl;
-    cin >> hasWhile;
-    cout << "支持case吗？（1：支持，0：不支持）" << endl;
-    cin >> hasWhile;
-    cout << "支持repeat吗？（1：支持，0：不支持）" << endl;
-    cin >> hasWhile;
-    cout << "For循环支持自定义步长吗？（1：支持，0：不支持）" << endl;
-    cin >> hasWhile;
-    cout << "过程/函数无参时需要括号吗？（1：需要，0：不需要）" << endl;
-    cin >> hasWhile;
+    //cin >> dir;
+    //cout << "请输入编译器exe地址（含完整路径,若不需要输出编译结果请输入字母n） : " << endl;
+    //cin >> exe_dir;
+    //cout << "支持while吗？（1：支持，0：不支持）" << endl;
+    //cin >> hasWhile;
+    //cout << "支持case吗？（1：支持，0：不支持）" << endl;
+    //cin >> hasWhile;
+    //cout << "支持repeat吗？（1：支持，0：不支持）" << endl;
+    //cin >> hasWhile;
+    //cout << "For循环支持自定义步长吗？（1：支持，0：不支持）" << endl;
+    //cin >> hasWhile;
+    //cout << "过程/函数无参时需要括号吗？（1：需要，0：不需要）" << endl;
+    //cin >> hasWhile;
+    dir = "D:\\VisualStudio\\ComplingTest\\Test";
+    exe_dir = "D:\\VisualStudio\\BUAACourse-Compiler-pl0\\Debug\\Compiler-pl0.exe";
     int mode;
     if (strcmp(exe_dir.c_str(), "n")) {
         cout << "请选择编译器的输出方式 : " << endl
@@ -59,9 +63,10 @@ int main() {
                     break;
                 case procsym:
                 case funcsym:
-                    ss << lsStr;
+                    ss << lsStr <<" ";
                     getSym();
                     ss << lsStr;
+                    strcpy_s(func[topIndex++], lsStr);
                     getSym();
                     if (hasParenthesis) {
                         if (sym != lparen) {
@@ -81,6 +86,45 @@ int main() {
                     }
                     ss << lsStr;
                     break;
+                case ident:
+                    ss << lsStr << " ";
+                    for (index = 0; index < topIndex; index++) {
+                        if (!strcmp(lsStr, func[index])) {
+                            break;
+                        }
+                    }
+                    if (index < topIndex) {
+                        getSym();
+                        if (hasParenthesis) {
+                            if (sym != assign) {
+                                ss << "(";
+                                if (sym != lparen) {
+                                    ss << ")";
+                                }
+                                else {
+                                    getSym();
+                                }
+                            }
+                        }
+                        else {
+                            //swap ( a, b );
+                            //swap();
+                            //swap;
+                            if (sym == lparen) {
+                                getSym();
+                                if (sym != rparen) {
+                                    ss << "(" << lsStr << " ";
+                                }
+                                getSym();
+                            }
+                        }
+                        if (sym == nil)
+                            ss << endl;
+                        else
+                            ss << lsStr << " ";
+                    }
+                    
+                    break;
                 case whilesym:
                     if (!hasWhile) {
                         errorFlag = true;
@@ -88,41 +132,55 @@ int main() {
                     ss << lsStr;
                     break;
                 case forsym:
-                    ss << lsStr << " ";    getSym();
-                    ss << lsStr << " ";    getSym();
-                    ss << lsStr << " ";    getSym();
-                    ss << lsStr << " ";    getSym();
+                    //ss << lsStr << " ";    getSym();
+                    //ss << lsStr << " ";    getSym();
+                    //ss << lsStr << " ";    getSym();
+                    //ss << lsStr << " ";    getSym();
+                    while (sym != tosym && sym != downtosym) {
+                        ss << lsStr << " ";
+                        getSym();
+                    }
+                    //for i := 1 to/downto 2 do
+                    //for i := 1 to 2 by 1 do
                     if (hasStep) {
                         bool down = false;
+                        //char tmp1[MaxStr + 1];
+                        char tmp2[MaxStr + 1];
+                        char t[MaxStr + 1];
                         if (sym == downtosym) {
                             down = true;
                         }
-                        ss << "to ";
+                        strcpy_s(tmp2, "to");
                         getSym();
-                        ss << lsStr << " ";
-                        getSym();
+                        while (sym != bysym && sym != dosym) {
+                            strcpy_s(t, tmp2);
+                            sprintf_s(tmp2, "%s %s", t, lsStr);
+                            getSym();
+                        }
                         if (sym == bysym) {
-                            ss << lsStr << " ";
+                            ss << tmp2 << " " << lsStr << " ";
                         }
                         else {
                             if (down) {
-                                ss << "by -1 ";
+                                ss << tmp2 << " " << "by -1 ";
                             }
                             else {
-                                ss << "by 1 ";
+                                ss << tmp2 << " " << "by 1 ";
                             }
                             ss << "do ";
                         }
                     }
-                    //for i := 1 to/downto 2 do
-                    //for i := 1 to 2 by 1 do
                     else {
                         char tmp1[MaxStr + 1];
                         char tmp2[MaxStr + 1];
+                        char t[MaxStr + 1];
                         strcpy_s(tmp1, lsStr);
                         getSym();
-                        strcpy_s(tmp2, lsStr);
-                        getSym();
+                        while (sym != bysym && sym != dosym) {
+                            strcpy_s(t, tmp2);
+                            sprintf_s(tmp2, "%s %s", t, lsStr);
+                            getSym();
+                        }
                         if (sym == bysym) {
                             getSym();
                             if (sym == minussym) {
@@ -161,6 +219,7 @@ int main() {
             ofs.close();
         }
         ss.str("");
+        topIndex = 0;
     }
 
     cout << endl << "编译：" << endl;
