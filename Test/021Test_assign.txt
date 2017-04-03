@@ -1,9 +1,9 @@
-ConSt	cC='C';
-vAr 
+const	cC='C';
+var
 	a, B :integer ; 
-	array1:arrAy[15]OF integer ; 
+	array1:array[15]OF integer ; 
     	c :char ; 
-BEGIN
+begin
 	a:= 5 ;
 	array1[0] := A ; 
 	b := array1[0] ; 
